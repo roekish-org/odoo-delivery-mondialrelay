@@ -36,6 +36,8 @@
                     </group>
                     <group string="Pricing">
                         <field name="mondialrelay_pricing_method" />
+                        <field name="mondialrelay_delay_min" />
+                        <field name="mondialrelay_delay_max" />
                     </group>
                     <field
                         name="mondialrelay_tariff_ids"
@@ -45,6 +47,8 @@
                             <field name="zone" />
                             <field name="max_weight" />
                             <field name="price" />
+                            <field name="delay_min" />
+                            <field name="delay_max" />
                             <field name="currency_id" column_invisible="1" />
                         </list>
                     </field>

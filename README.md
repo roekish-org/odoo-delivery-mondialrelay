@@ -24,6 +24,7 @@
 | | |
 |---|---|
 | **Tarification** | Prix calculé depuis une **grille tarifaire Mondial Relay** (poids × zone) ou les **règles de prix natives** d'Odoo. Point d'extension `_mondialrelay_get_live_price` (fail-closed) pour un futur service de cotation. |
+| **Délai de livraison** | Délai annoncé en **jours ouvrés** (min / max) réglé sur le transporteur, surchargeable par zone dans la grille. Renvoyé avec le prix par `rate_shipment` (`delay_min` / `delay_max`) et affiché dans l'assistant d'ajout de livraison, pour choisir un transporteur sur le coût et le délai. |
 | **Étiquettes** | Création de l'expédition et de l'étiquette via l'**API Connect** (API V2) de Mondial Relay, production ou bac à sable : PDF 10x15, A4, A5 ou code ZPL ; numéro d'expédition enregistré sur le bon de livraison. |
 | **Points Relais** | Recherche des Points Relais et Lockers proches (web service `WSI4_PointRelais_Recherche`), sélectionnable sur le **devis** et le **bon de livraison**, propagé à la validation. |
 | **Suivi** | Lien de suivi Mondial Relay pour le client. |

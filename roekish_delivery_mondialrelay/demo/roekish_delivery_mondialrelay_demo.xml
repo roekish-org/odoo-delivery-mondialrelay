@@ -47,6 +47,8 @@
         <field name="mondialrelay_collection_mode">CCC</field>
         <field name="mondialrelay_label_format">10x15</field>
         <field name="mondialrelay_pricing_method">grid</field>
+        <field name="mondialrelay_delay_min">3</field>
+        <field name="mondialrelay_delay_max">5</field>
     </record>
     <record id="delivery_carrier_mondialrelay_locker" model="delivery.carrier">
         <field name="name">Mondial Relay - Locker</field>
@@ -57,6 +59,8 @@
         <field name="mondialrelay_collection_mode">CCC</field>
         <field name="mondialrelay_label_format">10x15</field>
         <field name="mondialrelay_pricing_method">grid</field>
+        <field name="mondialrelay_delay_min">3</field>
+        <field name="mondialrelay_delay_max">5</field>
     </record>
     <record id="delivery_carrier_mondialrelay_home" model="delivery.carrier">
         <field name="name">Mondial Relay - Domicile</field>
@@ -67,6 +71,8 @@
         <field name="mondialrelay_collection_mode">CCC</field>
         <field name="mondialrelay_label_format">10x15</field>
         <field name="mondialrelay_pricing_method">grid</field>
+        <field name="mondialrelay_delay_min">2</field>
+        <field name="mondialrelay_delay_max">4</field>
     </record>
 
     <!-- Tariffs: relais -->
@@ -175,35 +181,47 @@
         <field name="zone">EU1</field>
         <field name="max_weight">0.5</field>
         <field name="price">9.50</field>
+        <field name="delay_min">4</field>
+        <field name="delay_max">6</field>
     </record>
     <record id="tariff_home_eu1_30kg" model="delivery.mondialrelay.tariff">
         <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
         <field name="zone">EU1</field>
         <field name="max_weight">30</field>
         <field name="price">30.40</field>
+        <field name="delay_min">4</field>
+        <field name="delay_max">6</field>
     </record>
     <record id="tariff_home_eu2_500g" model="delivery.mondialrelay.tariff">
         <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
         <field name="zone">EU2</field>
         <field name="max_weight">0.5</field>
         <field name="price">10.20</field>
+        <field name="delay_min">5</field>
+        <field name="delay_max">7</field>
     </record>
     <record id="tariff_home_eu2_30kg" model="delivery.mondialrelay.tariff">
         <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
         <field name="zone">EU2</field>
         <field name="max_weight">30</field>
         <field name="price">37.25</field>
+        <field name="delay_min">5</field>
+        <field name="delay_max">7</field>
     </record>
     <record id="tariff_home_eu3_500g" model="delivery.mondialrelay.tariff">
         <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
         <field name="zone">EU3</field>
         <field name="max_weight">0.5</field>
         <field name="price">11.20</field>
+        <field name="delay_min">5</field>
+        <field name="delay_max">8</field>
     </record>
     <record id="tariff_home_eu3_30kg" model="delivery.mondialrelay.tariff">
         <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
         <field name="zone">EU3</field>
         <field name="max_weight">30</field>
         <field name="price">38.25</field>
+        <field name="delay_min">5</field>
+        <field name="delay_max">8</field>
     </record>
 </odoo>

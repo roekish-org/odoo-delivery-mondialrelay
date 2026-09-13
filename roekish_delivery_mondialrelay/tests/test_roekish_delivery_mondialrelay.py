@@ -215,10 +215,53 @@ class TestDeliveryMondialrelay(TransactionCase):
                 ],
             }
         )
-        res = self.relay_carrier.mondialrelay_rate_shipment(
-            self._create_order(self.relay_carrier)
-        )
+        order = self._create_order(self.relay_carrier)
+        res = self.relay_carrier.mondialrelay_rate_shipment(order)
         self.assertEqual(res["price"], 4.5)
+        # The carrier delivery time is returned with rule-based prices too.
+        self.relay_carrier.write(
+            {"mondialrelay_delay_min": 3, "mondialrelay_delay_max": 5}
+        )
+        res = self.relay_carrier.mondialrelay_rate_shipment(order)
+        self.assertEqual((res["delay_min"], res["delay_max"]), (3, 5))
+
+    # ------------------------------------------------------------------
+    # delivery time
+    # ------------------------------------------------------------------
+    def test_rate_shipment_delivery_time(self):
+        # Unknown by default: zeros and no message, nothing misleading shown.
+        order = self._create_order(self.home_carrier)
+        res = self.home_carrier.mondialrelay_rate_shipment(order)
+        self.assertEqual((res["delay_min"], res["delay_max"]), (0, 0))
+        self.assertFalse(res["warning_message"])
+        # The carrier time applies everywhere; a grid line overrides it.
+        self.home_carrier.write(
+            {"mondialrelay_delay_min": 2, "mondialrelay_delay_max": 4}
+        )
+        self.home_carrier.mondialrelay_tariff_ids.filtered(
+            lambda t: t.zone == "EU1"
+        ).write({"delay_min": 4, "delay_max": 6})
+        res = self.home_carrier.mondialrelay_rate_shipment(order)
+        self.assertEqual((res["delay_min"], res["delay_max"]), (2, 4))
+        self.assertEqual(res["warning_message"], "Delivery in 2 to 4 working days.")
+        res = self.home_carrier.mondialrelay_rate_shipment(
+            self._create_order(
+                self.home_carrier,
+                partner_vals={"country_id": self.env.ref("base.be").id},
+            )
+        )
+        self.assertEqual(res["price"], 30.40)
+        self.assertEqual((res["delay_min"], res["delay_max"]), (4, 6))
+        # Single value and one-day wording.
+        self.home_carrier.write(
+            {"mondialrelay_delay_min": 1, "mondialrelay_delay_max": 1}
+        )
+        res = self.home_carrier.mondialrelay_rate_shipment(order)
+        self.assertEqual(res["warning_message"], "Delivery in 1 working day.")
+        # The generic entry point used to compare carriers keeps the keys.
+        res = self.home_carrier.rate_shipment(order)
+        self.assertEqual(res["price"], 10.99)
+        self.assertEqual((res["delay_min"], res["delay_max"]), (1, 1))
 
     # ------------------------------------------------------------------
     # Points Relais
