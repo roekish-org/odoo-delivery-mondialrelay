@@ -1,0 +1,5 @@
+# Optional runtime dependency, imported lazily and fail-closed if missing.
+# zeep: Mondial Relay Point Relais search (SOAP web service, API V1).
+# Labels need nothing extra: the Connect API (API V2) is called with
+# `requests` and `lxml`, shipped with Odoo.
+zeep

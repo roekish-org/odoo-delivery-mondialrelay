@@ -1,0 +1,731 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* roekish_delivery_mondialrelay
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260723\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-13 14:11+0000\n"
+"PO-Revision-Date: 2026-09-13 14:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: roekish_delivery_mondialrelay
+#: model:res.groups,name:roekish_delivery_mondialrelay.group_mondialrelay_manager
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__carrier_id
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__carrier_id
+msgid "Carrier"
+msgstr "Transporteur"
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_order_form_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_picking_form_mondialrelay
+msgid "Choose Point Relais"
+msgstr "Choisir un Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/pickup_mixin.py:0
+msgid "Choose a Point Relais"
+msgstr "Choisir un Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Choose a Point Relais on %s before generating a Mondial Relay label."
+msgstr "Choisissez un Point Relais sur %s avant de générer une étiquette Mondial Relay."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__city
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__city
+msgid "City"
+msgstr "Ville"
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_mondialrelay_pickup_wizard_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_merchant
+msgid ""
+"Code Enseigne provided by Mondial Relay (8 characters, for example BDTEST13 "
+"for the public test account)."
+msgstr "Code Enseigne fourni par Mondial Relay (8 caractères, par exemple BDTEST13 pour le compte de test public)."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_collection_mode__ccc
+msgid "Collected at the merchant"
+msgstr "Collecte chez le commerçant"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_collection_mode
+msgid "Collection mode"
+msgstr "Mode de collecte"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Complete the address of company %s: it is the parcel sender."
+msgstr "Complétez l'adresse de la société %s : c'est l'expéditeur du colis."
+
+#. module: roekish_delivery_mondialrelay
+#: model:res.groups,comment:roekish_delivery_mondialrelay.group_mondialrelay_manager
+msgid "Configure Mondial Relay carriers, credentials and tariff grids."
+msgstr "Configurer les transporteurs Mondial Relay, les identifiants et les grilles tarifaires."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_api_login
+msgid "Connect API login"
+msgstr "Login API Connect"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_api_password
+msgid "Connect API password"
+msgstr "Mot de passe API Connect"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Connection successful, %s Points Relais returned and the Connect API "
+"accepted the credentials."
+msgstr "Connexion réussie, %s Points Relais renvoyés et identifiants acceptés par l'API Connect."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__country_code
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_sandbox
+msgid ""
+"Create shipments on the Mondial Relay Connect API sandbox instead of "
+"production."
+msgstr "Créer les expéditions sur le bac à sable de l'API Connect Mondial Relay au lieu de la production."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__create_uid
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__create_uid
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__create_date
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__create_date
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_delivery_mode__lcc
+msgid "Delivery at the merchant"
+msgstr "Livraison chez le commerçant"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_delivery_mode
+msgid "Delivery mode"
+msgstr "Mode de livraison"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__price
+msgid ""
+"Delivery price charged to the customer, expressed in the carrier company "
+"currency."
+msgstr "Prix de livraison facturé au client, dans la devise de la société du transporteur."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__display_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__display_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__display_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__display_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__display_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__display_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__distance
+msgid "Distance (m)"
+msgstr "Distance (m)"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_collection_mode__rel
+msgid "Dropped in a Point Relais"
+msgstr "Dépôt en Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_mondialrelay_tariff__zone__eu1
+msgid "Europe zone 1 (Belgium, Luxembourg, Netherlands, Germany)"
+msgstr "Europe zone 1 (Belgique, Luxembourg, Pays-Bas, Allemagne)"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_mondialrelay_tariff__zone__eu2
+msgid "Europe zone 2 (Spain, United Kingdom)"
+msgstr "Europe zone 2 (Espagne, Royaume-Uni)"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_mondialrelay_tariff__zone__eu3
+msgid "Europe zone 3 (Italy, Portugal, Austria)"
+msgstr "Europe zone 3 (Italie, Portugal, Autriche)"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Fill the Mondial Relay Connect API login and password on carrier '%s' first."
+msgstr "Renseignez d'abord le login et le mot de passe de l'API Connect Mondial Relay sur le transporteur « %s »."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Fill the Mondial Relay merchant code on carrier '%s' first."
+msgstr "Renseignez d'abord le code enseigne Mondial Relay sur le transporteur « %s »."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Fill the merchant code and the web service private key before testing the "
+"connection."
+msgstr "Renseignez le code enseigne et la clé privée du web service avant de tester la connexion."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_mondialrelay_tariff__zone__fr
+msgid "France (metropolitan, Monaco)"
+msgstr "France (métropole, Monaco)"
+
+#. module: roekish_delivery_mondialrelay
+#: model:res.groups,comment:roekish_delivery_mondialrelay.group_mondialrelay_user
+msgid "Generate Mondial Relay labels, track parcels and pick Points Relais."
+msgstr "Générer des étiquettes Mondial Relay, suivre les colis et choisir des Points Relais."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_delivery_mode__hom
+msgid "Home delivery"
+msgstr "Livraison à domicile"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_pricing_method
+msgid ""
+"How the delivery price is computed:\n"
+"- Mondial Relay tariff grid: weight x destination zone lines defined on this carrier.\n"
+"- Odoo pricing rules: the standard rule-based pricing engine."
+msgstr "Comment le prix de livraison est calculé :\n- Grille tarifaire Mondial Relay : lignes poids x zone de destination définies sur ce transporteur.\n- Règles de prix Odoo : le moteur de règles standard."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_collection_mode
+msgid "How the parcel enters the Mondial Relay network."
+msgstr "Comment le colis entre dans le réseau Mondial Relay."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__id
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__id
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__id
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__id
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__id
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__id
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__id
+msgid "ID"
+msgstr "ID"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_pickup_point_country
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_pickup_point_country
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_pickup_point_country
+msgid "ISO country code of the Point Relais, sent with its ID on the label."
+msgstr "Code pays ISO du Point Relais, envoyé avec son numéro sur l'étiquette."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_label_format
+msgid "Label format"
+msgstr "Format d'étiquette"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__write_uid
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__write_uid
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__write_date
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__write_date
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_api_login
+msgid ""
+"Login of the Mondial Relay Connect API (API V2) account used to create "
+"shipments and labels."
+msgstr "Login du compte API Connect (API V2) Mondial Relay utilisé pour créer les expéditions et les étiquettes."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_merchant
+msgid "Merchant code"
+msgstr "Code enseigne"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__delivery_type__mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_delivery_carrier_form_mondialrelay
+msgid "Mondial Relay"
+msgstr "Mondial Relay"
+
+#. module: roekish_delivery_mondialrelay
+#: model:delivery.carrier,name:roekish_delivery_mondialrelay.delivery_carrier_mondialrelay_home
+msgid "Mondial Relay - Domicile"
+msgstr "Mondial Relay - Domicile"
+
+#. module: roekish_delivery_mondialrelay
+#: model:delivery.carrier,name:roekish_delivery_mondialrelay.delivery_carrier_mondialrelay_locker
+msgid "Mondial Relay - Locker"
+msgstr "Mondial Relay - Locker"
+
+#. module: roekish_delivery_mondialrelay
+#: model:delivery.carrier,name:roekish_delivery_mondialrelay.delivery_carrier_mondialrelay_relais
+msgid "Mondial Relay - Point Relais"
+msgstr "Mondial Relay - Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.module.category,name:roekish_delivery_mondialrelay.module_category_delivery_mondialrelay
+#: model:res.groups.privilege,name:roekish_delivery_mondialrelay.privilege_delivery_mondialrelay
+msgid "Mondial Relay Delivery"
+msgstr "Livraison Mondial Relay"
+
+#. module: roekish_delivery_mondialrelay
+#: model:product.template,name:roekish_delivery_mondialrelay.product_delivery_mondialrelay_home_product_template
+msgid "Mondial Relay Domicile"
+msgstr "Mondial Relay Domicile"
+
+#. module: roekish_delivery_mondialrelay
+#: model:product.template,name:roekish_delivery_mondialrelay.product_delivery_mondialrelay_locker_product_template
+msgid "Mondial Relay Locker"
+msgstr "Mondial Relay Locker"
+
+#. module: roekish_delivery_mondialrelay
+#: model:product.template,name:roekish_delivery_mondialrelay.product_delivery_mondialrelay_relais_product_template
+msgid "Mondial Relay Point Relais"
+msgstr "Mondial Relay Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model,name:roekish_delivery_mondialrelay.model_delivery_mondialrelay_pickup_line
+msgid "Mondial Relay Point Relais candidate"
+msgstr "Point Relais Mondial Relay proposé"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Mondial Relay Point Relais delivery is not available in %s: use a home "
+"delivery carrier."
+msgstr "La livraison en Point Relais Mondial Relay n'est pas disponible en %s : utilisez un transporteur à domicile."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model,name:roekish_delivery_mondialrelay.model_delivery_mondialrelay_pickup_mixin
+msgid "Mondial Relay Point Relais holder"
+msgstr "Porteur de Point Relais Mondial Relay"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model,name:roekish_delivery_mondialrelay.model_delivery_mondialrelay_pickup_wizard
+msgid "Mondial Relay Point Relais search"
+msgstr "Recherche de Points Relais Mondial Relay"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Mondial Relay Point Relais search failed:\n"
+"%s"
+msgstr "La recherche de Points Relais Mondial Relay a échoué :\n%s"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model,name:roekish_delivery_mondialrelay.model_delivery_mondialrelay_tariff
+msgid "Mondial Relay Tariff Grid Line"
+msgstr "Ligne de grille tarifaire Mondial Relay"
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_delivery_carrier_form_mondialrelay
+msgid "Mondial Relay account"
+msgstr "Compte Mondial Relay"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_delivery_mode
+msgid "Mondial Relay delivery mode sent on the shipment."
+msgstr "Mode de livraison Mondial Relay envoyé sur l'expédition."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Mondial Relay does not deliver to %s."
+msgstr "Mondial Relay ne livre pas en %s."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Mondial Relay home delivery requires a phone number on the recipient %s."
+msgstr "La livraison à domicile Mondial Relay exige un numéro de téléphone sur le destinataire %s."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Mondial Relay is limited to %s kg per parcel for this delivery mode."
+msgstr "Mondial Relay est limité à %s kg par colis pour ce mode de livraison."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Mondial Relay is unreachable or answered unexpectedly:\n"
+"%s"
+msgstr "Mondial Relay est injoignable ou a répondu de façon inattendue :\n%s"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Mondial Relay label %s"
+msgstr "Étiquette Mondial Relay %s"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_is_pickup
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_is_pickup
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_is_pickup
+msgid "Mondial Relay pickup delivery"
+msgstr "Livraison Mondial Relay hors domicile"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Mondial Relay refused the request (code %(code)s): %(msg)s"
+msgstr "Mondial Relay a refusé la requête (code %(code)s) : %(msg)s"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Mondial Relay rejected the request:\n"
+"%s"
+msgstr "Mondial Relay a rejeté la requête :\n%s"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Mondial Relay requires a phone number or an email on the recipient %s."
+msgstr "Mondial Relay exige un numéro de téléphone ou un email sur le destinataire %s."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Mondial Relay returned no label for shipment %s."
+msgstr "Mondial Relay n'a renvoyé aucune étiquette pour l'expédition %s."
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Mondial Relay returned no shipment for %s."
+msgstr "Mondial Relay n'a renvoyé aucune expédition pour %s."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_tariff_ids
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_pricing_method__grid
+msgid "Mondial Relay tariff grid"
+msgstr "Grille tarifaire Mondial Relay"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"Mondial Relay tracking reference cleared in Odoo. If the parcel was already "
+"handed over, contact Mondial Relay."
+msgstr "Référence de suivi Mondial Relay effacée dans Odoo. Si le colis a déjà été remis, contactez Mondial Relay."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"No Mondial Relay tariff matches this destination and weight. Add a matching "
+"line to the tariff grid of carrier '%s'."
+msgstr "Aucun tarif Mondial Relay ne correspond à cette destination et ce poids. Ajoutez une ligne à la grille tarifaire du transporteur « %s »."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_pricing_method__base_on_rule
+msgid "Odoo pricing rules"
+msgstr "Règles de prix Odoo"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_label_format__10x15
+msgid "PDF 10x15"
+msgstr "PDF 10x15"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_label_format__a4
+msgid "PDF A4"
+msgstr "PDF A4"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_label_format__a5
+msgid "PDF A5"
+msgstr "PDF A5"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_api_password
+msgid ""
+"Password of the Mondial Relay Connect API account. Readable only by Mondial "
+"Relay administrators."
+msgstr "Mot de passe du compte API Connect Mondial Relay. Lisible uniquement par les administrateurs Mondial Relay."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__picking_id
+msgid "Picking"
+msgstr "Transfert"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__code
+msgid "Point ID"
+msgstr "ID du point"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_pickup_point_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_pickup_point_name
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_pickup_point_name
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_delivery_mode__24r
+msgid "Point Relais"
+msgstr "Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_pickup_point_code
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_pickup_point_code
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_pickup_point_code
+msgid "Point Relais ID"
+msgstr "ID du Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_delivery_mode__24l
+msgid "Point Relais XL / Locker"
+msgstr "Point Relais XL / Locker"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_pickup_point_zip
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_pickup_point_zip
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_pickup_point_zip
+msgid "Point Relais ZIP"
+msgstr "CP du Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_pickup_point_city
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_pickup_point_city
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_pickup_point_city
+msgid "Point Relais city"
+msgstr "Ville du Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_pickup_point_country
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_pickup_point_country
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_pickup_point_country
+msgid "Point Relais country"
+msgstr "Pays du Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_pickup_point_street
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_pickup_point_street
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_pickup_point_street
+msgid "Point Relais street"
+msgstr "Rue du Point Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__line_ids
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_mondialrelay_pickup_wizard_form
+msgid "Points Relais"
+msgstr "Points Relais"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__price
+msgid "Price"
+msgstr "Prix"
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_delivery_carrier_form_mondialrelay
+msgid "Pricing"
+msgstr "Tarification"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_pricing_method
+msgid "Pricing method"
+msgstr "Méthode de tarification"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_private_key
+msgid ""
+"Private key of the Mondial Relay Web Service (API V1), used to sign Point "
+"Relais searches. Readable only by Mondial Relay administrators."
+msgstr "Clé privée du Web Service Mondial Relay (API V1), utilisée pour signer les recherches de Points Relais. Lisible uniquement par les administrateurs Mondial Relay."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__delivery_type
+msgid "Provider"
+msgstr "Fournisseur"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__sale_id
+msgid "Sale"
+msgstr "Vente"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model,name:roekish_delivery_mondialrelay.model_sale_order
+msgid "Sales Order"
+msgstr "Commande client"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_sandbox
+msgid "Sandbox"
+msgstr "Bac à sable"
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_mondialrelay_pickup_wizard_form
+msgid "Search"
+msgstr "Rechercher"
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_mondialrelay_pickup_wizard_form
+msgid "Select"
+msgstr "Sélectionner"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid "Set a shipping weight on %s before generating a Mondial Relay label."
+msgstr "Renseignez un poids d'expédition sur %s avant de générer une étiquette Mondial Relay."
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_delivery_carrier_form_mondialrelay
+msgid "Shipment"
+msgstr "Expédition"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model,name:roekish_delivery_mondialrelay.model_delivery_carrier
+msgid "Shipping Methods"
+msgstr "Méthodes d'expédition"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__street
+msgid "Street"
+msgstr "Rue"
+
+#. module: roekish_delivery_mondialrelay
+#: model_terms:ir.ui.view,arch_db:roekish_delivery_mondialrelay.view_delivery_carrier_form_mondialrelay
+msgid "Test connection"
+msgstr "Tester la connexion"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"The Mondial Relay label could not be downloaded:\n"
+"%s"
+msgstr "L'étiquette Mondial Relay n'a pas pu être téléchargée :\n%s"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"The Python library 'zeep' is required to search Mondial Relay Points Relais."
+" Install it with: pip install zeep"
+msgstr "La librairie Python « zeep » est requise pour rechercher les Points Relais Mondial Relay. Installez-la avec : pip install zeep"
+
+#. module: roekish_delivery_mondialrelay
+#. odoo-python
+#: code:addons/roekish_delivery_mondialrelay/models/delivery_carrier.py:0
+msgid ""
+"The delivery address of %(picking)s is incomplete (missing: %(fields)s)."
+msgstr "L'adresse de livraison de %(picking)s est incomplète (manque : %(fields)s)."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_mixin__mondialrelay_is_pickup
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_sale_order__mondialrelay_is_pickup
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_stock_picking__mondialrelay_is_pickup
+msgid "The selected carrier delivers to a Point Relais or a Locker."
+msgstr "Le transporteur sélectionné livre en Point Relais ou en Locker."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,help:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__max_weight
+msgid ""
+"This line applies to shipments whose total weight is at or below this value,"
+" for the selected zone."
+msgstr "Cette ligne s'applique aux envois dont le poids total est inférieur ou égal à cette valeur, pour la zone choisie."
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model,name:roekish_delivery_mondialrelay.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"
+
+#. module: roekish_delivery_mondialrelay
+#: model:res.groups,name:roekish_delivery_mondialrelay.group_mondialrelay_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_carrier__mondialrelay_private_key
+msgid "Web service private key"
+msgstr "Clé privée du web service"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__weight
+msgid "Weight (kg)"
+msgstr "Poids (kg)"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__max_weight
+msgid "Weight up to (kg)"
+msgstr "Poids jusqu'à (kg)"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__wizard_id
+msgid "Wizard"
+msgstr "Assistant"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_line__zip
+msgid "ZIP"
+msgstr "CP"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_pickup_wizard__zip
+msgid "ZIP code"
+msgstr "Code postal"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields.selection,name:roekish_delivery_mondialrelay.selection__delivery_carrier__mondialrelay_label_format__zpl
+msgid "ZPL 10x15 (label printer)"
+msgstr "ZPL 10x15 (imprimante d'étiquettes)"
+
+#. module: roekish_delivery_mondialrelay
+#: model:ir.model.fields,field_description:roekish_delivery_mondialrelay.field_delivery_mondialrelay_tariff__zone
+msgid "Zone"
+msgstr "Zone"

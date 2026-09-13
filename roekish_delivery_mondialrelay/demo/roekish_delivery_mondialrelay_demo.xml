@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 ROEKISH
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+     Indicative Mondial Relay public rates (mondialrelay.fr grid for France
+     and comparison sites for Europe, 2026, taxes included), loaded as
+     editable demo data. Professional rates are negotiated per contract:
+     users copy these carriers and update the grids with their own rates. -->
+<odoo>
+
+    <!-- ===================== Products ===================== -->
+    <record id="product_delivery_mondialrelay_relais" model="product.product">
+        <field name="name">Mondial Relay Point Relais</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries" />
+        <field name="sale_ok" eval="False" />
+        <field name="purchase_ok" eval="False" />
+        <field name="list_price">0.0</field>
+        <field name="invoice_policy">order</field>
+    </record>
+    <record id="product_delivery_mondialrelay_locker" model="product.product">
+        <field name="name">Mondial Relay Locker</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries" />
+        <field name="sale_ok" eval="False" />
+        <field name="purchase_ok" eval="False" />
+        <field name="list_price">0.0</field>
+        <field name="invoice_policy">order</field>
+    </record>
+    <record id="product_delivery_mondialrelay_home" model="product.product">
+        <field name="name">Mondial Relay Domicile</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries" />
+        <field name="sale_ok" eval="False" />
+        <field name="purchase_ok" eval="False" />
+        <field name="list_price">0.0</field>
+        <field name="invoice_policy">order</field>
+    </record>
+
+    <!-- ===================== Carriers ===================== -->
+    <record id="delivery_carrier_mondialrelay_relais" model="delivery.carrier">
+        <field name="name">Mondial Relay - Point Relais</field>
+        <field name="delivery_type">mondialrelay</field>
+        <field name="product_id" ref="product_delivery_mondialrelay_relais" />
+        <field name="integration_level">rate_and_ship</field>
+        <field name="mondialrelay_delivery_mode">24R</field>
+        <field name="mondialrelay_collection_mode">CCC</field>
+        <field name="mondialrelay_label_format">10x15</field>
+        <field name="mondialrelay_pricing_method">grid</field>
+    </record>
+    <record id="delivery_carrier_mondialrelay_locker" model="delivery.carrier">
+        <field name="name">Mondial Relay - Locker</field>
+        <field name="delivery_type">mondialrelay</field>
+        <field name="product_id" ref="product_delivery_mondialrelay_locker" />
+        <field name="integration_level">rate_and_ship</field>
+        <field name="mondialrelay_delivery_mode">24L</field>
+        <field name="mondialrelay_collection_mode">CCC</field>
+        <field name="mondialrelay_label_format">10x15</field>
+        <field name="mondialrelay_pricing_method">grid</field>
+    </record>
+    <record id="delivery_carrier_mondialrelay_home" model="delivery.carrier">
+        <field name="name">Mondial Relay - Domicile</field>
+        <field name="delivery_type">mondialrelay</field>
+        <field name="product_id" ref="product_delivery_mondialrelay_home" />
+        <field name="integration_level">rate_and_ship</field>
+        <field name="mondialrelay_delivery_mode">HOM</field>
+        <field name="mondialrelay_collection_mode">CCC</field>
+        <field name="mondialrelay_label_format">10x15</field>
+        <field name="mondialrelay_pricing_method">grid</field>
+    </record>
+
+    <!-- Tariffs: relais -->
+    <record id="tariff_relais_fr_250g" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_relais" />
+        <field name="zone">FR</field>
+        <field name="max_weight">0.25</field>
+        <field name="price">4.15</field>
+    </record>
+    <record id="tariff_relais_fr_1kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_relais" />
+        <field name="zone">FR</field>
+        <field name="max_weight">1</field>
+        <field name="price">5.99</field>
+    </record>
+    <record id="tariff_relais_fr_3kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_relais" />
+        <field name="zone">FR</field>
+        <field name="max_weight">3</field>
+        <field name="price">7.99</field>
+    </record>
+    <record id="tariff_relais_fr_10kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_relais" />
+        <field name="zone">FR</field>
+        <field name="max_weight">10</field>
+        <field name="price">15.99</field>
+    </record>
+    <record id="tariff_relais_fr_20kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_relais" />
+        <field name="zone">FR</field>
+        <field name="max_weight">20</field>
+        <field name="price">25.99</field>
+    </record>
+
+    <!-- Tariffs: locker -->
+    <record id="tariff_locker_fr_250g" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_locker" />
+        <field name="zone">FR</field>
+        <field name="max_weight">0.25</field>
+        <field name="price">4.15</field>
+    </record>
+    <record id="tariff_locker_fr_1kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_locker" />
+        <field name="zone">FR</field>
+        <field name="max_weight">1</field>
+        <field name="price">5.99</field>
+    </record>
+    <record id="tariff_locker_fr_3kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_locker" />
+        <field name="zone">FR</field>
+        <field name="max_weight">3</field>
+        <field name="price">7.99</field>
+    </record>
+    <record id="tariff_locker_fr_10kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_locker" />
+        <field name="zone">FR</field>
+        <field name="max_weight">10</field>
+        <field name="price">15.99</field>
+    </record>
+    <record id="tariff_locker_fr_20kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_locker" />
+        <field name="zone">FR</field>
+        <field name="max_weight">20</field>
+        <field name="price">25.99</field>
+    </record>
+
+    <!-- Tariffs: home -->
+    <record id="tariff_home_fr_250g" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">FR</field>
+        <field name="max_weight">0.25</field>
+        <field name="price">4.99</field>
+    </record>
+    <record id="tariff_home_fr_1kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">FR</field>
+        <field name="max_weight">1</field>
+        <field name="price">9.49</field>
+    </record>
+    <record id="tariff_home_fr_2kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">FR</field>
+        <field name="max_weight">2</field>
+        <field name="price">10.99</field>
+    </record>
+    <record id="tariff_home_fr_5kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">FR</field>
+        <field name="max_weight">5</field>
+        <field name="price">16.39</field>
+    </record>
+    <record id="tariff_home_fr_10kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">FR</field>
+        <field name="max_weight">10</field>
+        <field name="price">24.99</field>
+    </record>
+    <record id="tariff_home_fr_25kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">FR</field>
+        <field name="max_weight">25</field>
+        <field name="price">42.99</field>
+    </record>
+    <record id="tariff_home_eu1_500g" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">EU1</field>
+        <field name="max_weight">0.5</field>
+        <field name="price">9.50</field>
+    </record>
+    <record id="tariff_home_eu1_30kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">EU1</field>
+        <field name="max_weight">30</field>
+        <field name="price">30.40</field>
+    </record>
+    <record id="tariff_home_eu2_500g" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">EU2</field>
+        <field name="max_weight">0.5</field>
+        <field name="price">10.20</field>
+    </record>
+    <record id="tariff_home_eu2_30kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">EU2</field>
+        <field name="max_weight">30</field>
+        <field name="price">37.25</field>
+    </record>
+    <record id="tariff_home_eu3_500g" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">EU3</field>
+        <field name="max_weight">0.5</field>
+        <field name="price">11.20</field>
+    </record>
+    <record id="tariff_home_eu3_30kg" model="delivery.mondialrelay.tariff">
+        <field name="carrier_id" ref="delivery_carrier_mondialrelay_home" />
+        <field name="zone">EU3</field>
+        <field name="max_weight">30</field>
+        <field name="price">38.25</field>
+    </record>
+</odoo>

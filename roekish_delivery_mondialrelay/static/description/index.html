@@ -1,0 +1,61 @@
+<section style="font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#22344F;max-width:960px;margin:0 auto;">
+
+  <p style="text-align:center;margin:0 0 24px;">
+    <img src="banner.png" alt="roekish_delivery_mondialrelay" style="max-width:100%;height:auto;border-radius:8px;"/>
+  </p>
+
+  <h1 style="text-align:center;font-size:34px;margin:8px 0;">Mondial Relay for Odoo 19: Point Relais, Locker, home delivery</h1>
+  <p style="text-align:center;font-size:18px;color:#5c6b82;margin:0 0 32px;">
+    Rate shipments, generate labels, track parcels and offer Point Relais
+    delivery, straight from Odoo.
+  </p>
+
+  <h2 style="border-bottom:3px solid #96154A;padding-bottom:6px;">Features</h2>
+  <ul style="font-size:16px;line-height:1.7;">
+    <li><b>Rating</b>: delivery price computed from a Mondial Relay tariff grid (weight by zone) or from Odoo's native pricing rules.</li>
+    <li><b>Labels</b>: shipment and label creation through the Mondial Relay Connect API (production or sandbox), PDF 10x15, A4, A5 or ZPL code, with the shipment number stored on the delivery order.</li>
+    <li><b>Tracking</b>: a Mondial Relay tracking link is exposed to the customer.</li>
+    <li><b>Points Relais</b>: search nearby Points Relais and Lockers and select one on the sale order or the delivery order, propagated on confirmation and sent on the shipment.</li>
+    <li><b>Modes</b>: Point Relais, Point Relais XL / Locker, home delivery and merchant delivery; collection at the merchant or drop in a Point Relais.</li>
+  </ul>
+
+  <h2 style="border-bottom:3px solid #96154A;padding-bottom:6px;">Carriers and zones</h2>
+  <p style="font-size:16px;line-height:1.7;">
+    Three ready-to-use carriers ship with indicative 2026 rates, which you
+    replace with your own contract rates: Point Relais, Locker and Domicile.
+    Zones cover metropolitan France, Europe zone 1 (Belgium, Luxembourg,
+    Netherlands, Germany), Europe zone 2 (Spain, United Kingdom) and Europe
+    zone 3 (Italy, Portugal, Austria).
+  </p>
+
+  <h2 style="border-bottom:3px solid #96154A;padding-bottom:6px;">Security</h2>
+  <ul style="font-size:16px;line-height:1.7;">
+    <li>The web service private key and the Connect API credentials are restricted to the Mondial Relay Administrator group, and secrets are masked in error messages.</li>
+    <li>Fine-grained access rights with dedicated User and Administrator groups.</li>
+    <li>Multi-company isolation on the tariff grids.</li>
+  </ul>
+
+  <h2 style="border-bottom:3px solid #96154A;padding-bottom:6px;">Requirements</h2>
+  <p style="font-size:16px;line-height:1.7;">
+    The module builds on Odoo's native delivery framework. Rating and labels
+    work with no external library: the Connect API is called with
+    <code>requests</code>, shipped with Odoo. Point Relais search uses
+    <code>zeep</code>, optional and imported on demand.
+  </p>
+  <p style="font-size:15px;line-height:1.7;background:#F8E9EF;border-left:4px solid #96154A;padding:12px 16px;border-radius:6px;">
+    Deploy the module on the <code>addons_path</code> (Odoo.sh or On-Premise).
+    The Apps &gt; Import Module zip upload is data-only and cannot install a
+    module that ships Python models. On Odoo Online (SaaS) Python libraries
+    cannot be installed either, so the live Point Relais search needs Odoo.sh
+    or On-Premise, where <code>zeep</code> is available.
+  </p>
+
+  <div style="text-align:center;margin:32px 0 8px;">
+    <a href="https://github.com/roekish-org/odoo-delivery-mondialrelay" style="display:inline-block;background:#96154A;color:#fff;text-decoration:none;padding:12px 28px;border-radius:28px;font-weight:600;">Source code and documentation</a>
+  </div>
+
+  <p style="text-align:center;color:#8a94a6;font-size:14px;margin-top:24px;">
+    AGPL-3.0 licence. Published by ROEKISH.
+  </p>
+
+</section>

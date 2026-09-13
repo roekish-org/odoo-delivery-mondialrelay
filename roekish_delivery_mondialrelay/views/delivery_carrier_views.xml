@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 ROEKISH
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <record id="view_delivery_carrier_form_mondialrelay" model="ir.ui.view">
+        <field name="name">delivery.carrier.form.mondialrelay</field>
+        <field name="model">delivery.carrier</field>
+        <field name="inherit_id" ref="delivery.view_delivery_carrier_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page
+                    name="mondialrelay"
+                    string="Mondial Relay"
+                    invisible="delivery_type != 'mondialrelay'"
+                >
+                    <group>
+                        <group string="Mondial Relay account">
+                            <field name="mondialrelay_merchant" />
+                            <field name="mondialrelay_private_key" password="True" />
+                            <field name="mondialrelay_api_login" />
+                            <field name="mondialrelay_api_password" password="True" />
+                            <field name="mondialrelay_sandbox" />
+                            <button
+                                name="action_mondialrelay_test_connection"
+                                type="object"
+                                string="Test connection"
+                                icon="fa-plug"
+                                class="btn-link"
+                            />
+                        </group>
+                        <group string="Shipment">
+                            <field name="mondialrelay_delivery_mode" />
+                            <field name="mondialrelay_collection_mode" />
+                            <field name="mondialrelay_label_format" />
+                        </group>
+                    </group>
+                    <group string="Pricing">
+                        <field name="mondialrelay_pricing_method" />
+                    </group>
+                    <field
+                        name="mondialrelay_tariff_ids"
+                        invisible="mondialrelay_pricing_method != 'grid'"
+                    >
+                        <list editable="bottom">
+                            <field name="zone" />
+                            <field name="max_weight" />
+                            <field name="price" />
+                            <field name="currency_id" column_invisible="1" />
+                        </list>
+                    </field>
+                    <field
+                        name="price_rule_ids"
+                        nolabel="1"
+                        invisible="mondialrelay_pricing_method != 'base_on_rule'"
+                    />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

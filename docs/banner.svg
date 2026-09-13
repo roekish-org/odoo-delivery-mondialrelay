@@ -1,0 +1,51 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="roekish_delivery_mondialrelay, Mondial Relay for Odoo 19">
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBEEF3"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="540" y1="96" x2="740" y2="296" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B8285F"/>
+      <stop offset="1" stop-color="#7A0F3C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#page)"/>
+  <rect x="0" y="0" width="1280" height="10" fill="#7A0F3C"/>
+
+  <!-- icon badge -->
+  <g transform="translate(540,96)">
+    <rect width="200" height="200" rx="44" fill="url(#badge)"/>
+    <g transform="translate(20,20) scale(1.25)">
+      <path d="M64 28 L100 47 L100 85 L64 104 L28 85 L28 47 Z" fill="#22344F"/>
+      <path d="M64 28 L100 47 L64 66 L28 47 Z" fill="#2C4468"/>
+      <path d="M64 66 L100 47 L100 85 L64 104 Z" fill="#1C2C44"/>
+      <path d="M28 47 L64 66 L100 47" stroke="#B8285F" stroke-width="3" fill="none" stroke-linejoin="round"/>
+      <path d="M64 66 L64 104" stroke="#B8285F" stroke-width="3" fill="none"/>
+      <circle cx="64" cy="48" r="8.5" fill="#FFFFFF"/>
+      <circle cx="64" cy="48" r="3.6" fill="#7A0F3C"/>
+    </g>
+  </g>
+
+  <text x="640" y="372" text-anchor="middle" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="60" font-weight="700" fill="#22344F">roekish_delivery_mondialrelay</text>
+  <text x="640" y="420" text-anchor="middle" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="30" font-weight="500" fill="#6E2F4A">Mondial Relay for Odoo 19</text>
+
+  <!-- feature chips -->
+  <g font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="600" fill="#22344F" text-anchor="middle">
+    <g>
+      <rect x="256" y="486" width="150" height="60" rx="30" fill="#FFFFFF" stroke="#7A0F3C" stroke-width="2"/>
+      <text x="331" y="524">Rating</text>
+    </g>
+    <g>
+      <rect x="422" y="486" width="150" height="60" rx="30" fill="#FFFFFF" stroke="#7A0F3C" stroke-width="2"/>
+      <text x="497" y="524">Labels</text>
+    </g>
+    <g>
+      <rect x="588" y="486" width="170" height="60" rx="30" fill="#FFFFFF" stroke="#7A0F3C" stroke-width="2"/>
+      <text x="673" y="524">Tracking</text>
+    </g>
+    <g>
+      <rect x="774" y="486" width="250" height="60" rx="30" fill="#FFFFFF" stroke="#7A0F3C" stroke-width="2"/>
+      <text x="899" y="524">Points Relais</text>
+    </g>
+  </g>
+</svg>
