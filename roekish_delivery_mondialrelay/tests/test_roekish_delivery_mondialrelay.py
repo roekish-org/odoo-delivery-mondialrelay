@@ -423,6 +423,39 @@ class TestDeliveryMondialrelay(TransactionCase):
         sender = shipment.find("r:Sender/r:Address", ns)
         self.assertEqual(sender.findtext("r:PostCode", namespaces=ns), "75016")
 
+    def test_demo_label_without_account(self):
+        # No merchant code, no API call: the flow still yields a label.
+        self.relay_carrier.sudo().write(
+            {
+                "mondialrelay_demo_label": True,
+                "mondialrelay_merchant": False,
+                "mondialrelay_api_login": False,
+                "mondialrelay_api_password": False,
+            }
+        )
+        picking = self._create_delivery(self.relay_carrier)
+        with patch(CARRIER_MODULE + ".requests") as requests_mock:
+            result = self.relay_carrier.mondialrelay_send_shipping(picking)
+        requests_mock.post.assert_not_called()
+        requests_mock.get.assert_not_called()
+        tracking = result[0]["tracking_number"]
+        self.assertEqual(tracking, "DEMO%010d" % picking.id)
+        self.assertEqual(result[0]["exact_price"], 7.99)
+        attachment = self.env["ir.attachment"].search(
+            [("res_model", "=", "stock.picking"), ("res_id", "=", picking.id)]
+        )
+        self.assertEqual(attachment.mimetype, "application/pdf")
+        self.assertTrue(attachment.raw.startswith(b"%PDF"))
+        picking.carrier_tracking_ref = tracking
+        self.assertFalse(self.relay_carrier.mondialrelay_get_tracking_link(picking))
+
+    def test_demo_label_still_validates_shipment(self):
+        self.relay_carrier.mondialrelay_demo_label = True
+        picking = self._create_delivery(self.relay_carrier, pickup=False)
+        with self.assertRaises(UserError) as ctx:
+            self.relay_carrier.mondialrelay_send_shipping(picking)
+        self.assertIn("Point Relais", str(ctx.exception))
+
     def test_send_shipping_pdf_mocked(self):
         picking = self._create_delivery(self.relay_carrier)
         responses = [

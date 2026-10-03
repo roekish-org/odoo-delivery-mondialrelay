@@ -12,6 +12,13 @@ from lxml import etree
 from odoo import api, fields, models
 from odoo.exceptions import UserError
 
+from .demo_label import (
+    demo_tracking_number,
+    is_demo_tracking,
+    partner_lines,
+    render_demo_label,
+)
+
 _logger = logging.getLogger(__name__)
 
 try:
@@ -108,6 +115,13 @@ class DeliveryCarrier(models.Model):
         string="Sandbox",
         help="Create shipments on the Mondial Relay Connect API sandbox "
         "instead of production.",
+    )
+    mondialrelay_demo_label = fields.Boolean(
+        string="Demo labels",
+        help="Generate a specimen PDF label with a fake DEMO tracking number "
+        "instead of calling Mondial Relay: no shipment is created and nothing "
+        "is billed. For demonstrations and training only; untick before "
+        "shipping real parcels.",
     )
     mondialrelay_delivery_mode = fields.Selection(
         selection=[
@@ -354,6 +368,9 @@ class DeliveryCarrier(models.Model):
 
     def _mondialrelay_send_one(self, picking):
         self.ensure_one()
+        if self.mondialrelay_demo_label:
+            self._mondialrelay_check_shipment(picking)
+            return self._mondialrelay_send_demo(picking)
         body = self._mondialrelay_build_request(picking)
         root = self._mondialrelay_post(body)
         shipment = root.find(".//ShipmentsList/Shipment")
@@ -368,6 +385,56 @@ class DeliveryCarrier(models.Model):
         return {
             "exact_price": self._mondialrelay_price_for_picking(picking),
             "tracking_number": number or False,
+        }
+
+    def _mondialrelay_send_demo(self, picking):
+        """Attach a specimen label instead of calling Mondial Relay.
+
+        The shipment data is still validated by the caller, only the
+        carrier call is skipped.
+        """
+        self.ensure_one()
+        tracking = demo_tracking_number(picking)
+        company = self.company_id or self.env.company
+        weight = picking.shipping_weight or picking.weight or 0.0
+        details = [
+            self.env._("Weight: %s kg", round(weight, 3)),
+            self.env._(
+                "Reference: %s",
+                picking.sale_id.name or picking.origin or picking.name,
+            ),
+        ]
+        if picking.mondialrelay_pickup_point_code:
+            details.append(
+                self.env._("Point Relais: %s", picking.mondialrelay_pickup_point_code)
+            )
+        mode = dict(
+            self._fields["mondialrelay_delivery_mode"]._description_selection(self.env)
+        ).get(self.mondialrelay_delivery_mode, "")
+        pdf = render_demo_label(
+            heading=self.env._("DEMO LABEL - NOT VALID FOR SHIPPING"),
+            watermark=self.env._("SPECIMEN"),
+            carrier="%s - %s" % (self.name, mode),
+            sections=[
+                (self.env._("From"), partner_lines(company.partner_id)),
+                (self.env._("To"), partner_lines(picking.partner_id)),
+                (self.env._("Shipment"), details),
+            ],
+            tracking=tracking,
+            footer=self.env._("Demo mode: no shipment was created at the carrier."),
+        )
+        picking.message_post(
+            body=self.env._(
+                "Demo label %s: no shipment was created at Mondial Relay.",
+                tracking,
+            ),
+            attachments=[
+                ("%s_%s.pdf" % (picking.name.replace("/", "_"), tracking), pdf)
+            ],
+        )
+        return {
+            "exact_price": self._mondialrelay_price_for_picking(picking),
+            "tracking_number": tracking,
         }
 
     def _mondialrelay_attach_label(self, picking, number, output):
@@ -538,7 +605,7 @@ class DeliveryCarrier(models.Model):
         error = self._mondialrelay_check_destination(partner.country_id, weight)
         if error:
             raise UserError(error)
-        if not self.mondialrelay_merchant:
+        if not (self.mondialrelay_merchant or self.mondialrelay_demo_label):
             raise UserError(
                 self.env._(
                     "Fill the Mondial Relay merchant code on carrier '%s' first.",
@@ -870,6 +937,8 @@ class DeliveryCarrier(models.Model):
     def mondialrelay_get_tracking_link(self, picking):
         self.ensure_one()
         ref = (picking.carrier_tracking_ref or "").split(",")[0].strip()
+        if is_demo_tracking(ref):
+            return False
         return (
             "https://www.mondialrelay.fr/suivi-de-colis/?numeroExpedition=%s"
             "&codePostal=%s" % (ref, picking.partner_id.zip or "")

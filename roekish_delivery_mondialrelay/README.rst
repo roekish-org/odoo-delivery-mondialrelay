@@ -52,6 +52,10 @@ Demo data ships three carriers with indicative 2026 public rates (Point
 Relais, Locker, Domicile). Professional rates are negotiated per contract:
 replace them with yours.
 
+Tick *Demo labels* on a carrier to demonstrate the flow without an account:
+validating a delivery attaches a specimen PDF label with a fake ``DEMO``
+tracking number and never calls Mondial Relay. Untick it before shipping.
+
 Requirements
 ============
 

@@ -3,6 +3,19 @@
 Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
 Ce projet suit le versionnage des modules Odoo (`19.0.x.y.z`).
 
+## [19.0.1.2.0] - 2026-10-03
+
+### Ajouté
+
+- **Étiquettes de démonstration** : case à cocher sur le transporteur.
+  Activée, la validation d'un bon de livraison joint une étiquette PDF 10x15
+  « SPÉCIMEN » générée localement (adresses, poids, référence, Point Relais,
+  code-barres) avec un faux numéro de suivi `DEMO…`, sans appel à l'API
+  Connect : aucun envoi créé, rien de facturé, code enseigne non requis.
+  Les autres contrôles du colis (poids, destination, adresse, Point Relais,
+  téléphone/e-mail) restent appliqués. Un bandeau signale le mode sur la
+  fiche transporteur ; pas de lien de suivi pour les numéros `DEMO`.
+
 ## [19.0.1.1.0] - 2026-09-13
 
 ### Ajouté

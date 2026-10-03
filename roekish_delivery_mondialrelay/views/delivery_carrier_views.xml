@@ -13,6 +13,14 @@
                     string="Mondial Relay"
                     invisible="delivery_type != 'mondialrelay'"
                 >
+                    <div
+                        class="alert alert-warning"
+                        role="alert"
+                        invisible="not mondialrelay_demo_label"
+                    >
+                        Demo labels are on: validating a delivery attaches a
+                        specimen label, no shipment is created at Mondial Relay.
+                    </div>
                     <group>
                         <group string="Mondial Relay account">
                             <field name="mondialrelay_merchant" />
@@ -20,6 +28,7 @@
                             <field name="mondialrelay_api_login" />
                             <field name="mondialrelay_api_password" password="True" />
                             <field name="mondialrelay_sandbox" />
+                            <field name="mondialrelay_demo_label" />
                             <button
                                 name="action_mondialrelay_test_connection"
                                 type="object"
