@@ -2,12 +2,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "Delivery Carrier Mondial Relay",
-    "version": "19.0.1.2.0",
+    "version": "19.0.1.2.1",
     "summary": "Rate, ship and track parcels with Mondial Relay: Point Relais, "
     "Locker, home delivery",
     "author": "ROEKISH",
     "maintainers": ["alexis2m"],
-    "website": "https://github.com/roekish-org/odoo-delivery-mondialrelay",
+    "website": "https://www.roekish.com/applications/mondial-relay",
     "category": "Inventory/Delivery",
     "license": "AGPL-3",
     "images": ["static/description/banner.png"],
